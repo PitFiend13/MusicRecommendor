@@ -9,7 +9,7 @@ import pickle
 # import numpy as np
 app= Flask(__name__)
 model=pickle.load(open('musicrecommendormodel.pkl','rb'))
-@app.route('/',methods='GET')
+@app.route('/',methods=['GET'])
 def webpage():
     return render_template('mlmodel.html')
 @app.route("/predict",methods=['POST'])
