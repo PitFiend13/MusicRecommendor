@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Recommendor</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='musicrecommendorstyle.css') }}">
+    
+</head>
+<body>
+    <header>
+        <nav>
+            <div>
+                <h1 style="font-size:60px;" class="title"> MUSIC RECOMMENDOR</h1>
+            </div>
+        </nav>
+    </header>
+    <form action="/predict" method="post">
+        <div class="every_input">
+            <ul>
+                <li>
+                    <label style="font-size: 30px;">Age</label>
+                    <br>
+                    <input type="text" name="age" placeholder="Enter Your Age">
+                </li>
+                <li>
+                    <label style="font-size: 30px;">Gender</label>
+                    <br>
+                    <select name = "gender">
+                        <option value = "0" >Female</option>
+                        <option value = "1" selected>Male</option>
+                    </select>
+                </li>
+            </ul>
+        </div>
+        <div class="Submit">
+            <button id="btn">Submit</button>
+        </div>
+    </form>
+    <br><h4 style="text-align: center;" ><b>{{pred}}</b></h4>
+    <br>
+</body>
+<!-- <script>
+    btn.addEventListener("click",()=>{
+        
+    })
+</script> -->
+</html>
